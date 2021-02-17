@@ -43,14 +43,14 @@ public class Fatura {
 	}
 
 	public void setPrecoPorItem(double precoPorItem) {
-		this.precoPorItem = precoPorItem;
+		this.precoPorItem = (precoPorItem>0)?precoPorItem:0.0;
 	}
 
+	//TODO: ver o retorno de inteiro
 	public double getTotalFatura() {
+		
 		double calculo = this.getPrecoPorItem()*this.getQuantidade();
-		if(calculo<0.00){ 
-			calculo = Math.round(calculo);
-		}
+		
 		return calculo;
 		
 	}
